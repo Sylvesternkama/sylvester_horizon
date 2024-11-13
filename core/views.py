@@ -3,7 +3,6 @@ from .forms import RegisterForm, UserLoginForm, AddProductForm, EditProductForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-
 from .models import Product
 
 
@@ -12,7 +11,7 @@ def home(request):
     products = Product.objects.all()
 
     context = {'products': products}
-    return render(request, 'core/home.html', context)
+    return render(request, 'core/nkama.html', context)
 
 
 def signup(request):
