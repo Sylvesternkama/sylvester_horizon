@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+    {% block title %}Advertisements{% endblock title %}
+
+    {% block content %}
+    <h1>Advertisements</h1>
+<ul>
+    {% for ad in advertisements %}
+    {% csrf_token %}
+
+        <li>
+            <strong>Listing:</strong> <a href="{% url 'core:view_listing_detail' ad.listing.id %}">{{ ad.listing.title }}</a><br>
+            <strong>Active from:</strong> {{ ad.start_date }} to {{ ad.end_date }}
+        </li>
+    {% empty %}
+        <p>No active advertisements.</p>
+    {% endfor %}
+</ul>
+    {% endblock content %}
