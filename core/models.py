@@ -21,6 +21,7 @@ class Product(models.Model):
     created_by = models.ForeignKey(User, related_name='products', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images')
     quantity = models.IntegerField()
+    # popular_properties = medels.
 
     def __str__(self):
         return self.name

@@ -1,3 +1,8 @@
+body [
+    background-color: lightblue;
+]
+
+
 /*
 * Template Name: Property
 * Template Author: Untree.co
@@ -10375,3 +10380,4 @@ nav[aria-label="breadcrumb"] li:before {
       .site-footer .social li a:hover {
         background: #00204a;
         color: #fff; }
+

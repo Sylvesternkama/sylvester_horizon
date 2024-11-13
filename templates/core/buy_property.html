@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy {{ property.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Confirm Purchase of {{ property.title }}</h1>
+    </header>
+
+    <section class="purchase-confirmation">
+        <p><strong>Location:</strong> {{ property.location }}</p>
+        <p><strong>Price:</strong> {{ property.price }}</p>
+        <p><strong>Description:</strong> {{ property.description }}</p>
+
+        <form action="{% url 'confirm_purchase' property.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="confirm-button">Confirm Purchase</button>
+            <a href="{% url 'property_detail' property.id %}" class="cancel-button">Cancel</a>
+        </form>
+    </section>
+</body>
+</html>

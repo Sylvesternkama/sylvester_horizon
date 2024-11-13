@@ -1,3 +1,5 @@
+from msilib.schema import Property
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegisterForm, UserLoginForm, AddProductForm, EditProductForm
 from django.contrib.auth import authenticate, login, logout
@@ -6,12 +8,13 @@ from django.db.models import Q
 from .models import Product
 
 
+
 # Create your views here.
 def home(request):
     products = Product.objects.all()
 
     context = {'products': products}
-    return render(request, 'core/nkama.html', context)
+    return render(request, 'core/home.html', context)
 
 
 def signup(request):
@@ -122,5 +125,33 @@ def search(request):
         "products": products
     }
     return render(request, 'core/search.html', context)
+
+
+def property_list(request):
+    properties = Property.objects.all()
+    return render(request, 'core/properties.html', {'properties': properties})
+
+
+def property_detail(request, id):
+    property = get_object_or_404(Property, id=id)
+    return render(request, 'core/property_detail.html', {'property': property})
+
+
+def buy_property(request, id):
+    property = get_object_or_404(Property, id=id)
+    return render(request, 'core/buy_property.html', {'property': property})
+
+
+def confirm_purchase(request, id):
+    if request.method == 'POST':
+        property = get_object_or_404(Property, id=id)
+
+        # Add logic to mark property as sold (e.g., set property.is_sold = True and save)
+        property.is_sold = True
+        property.save()
+
+        messages.success(request, "Congratulations! You've successfully purchased the property.")
+        return redirect('property_list')
+    return redirect('property_detail', id=id)
 
 
