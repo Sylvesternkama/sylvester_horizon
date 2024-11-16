@@ -24,7 +24,7 @@ urlpatterns = [
     path("", include("core.urls")),
     path("conversation/", include("conversation.urls")),
     path("reports/", include("reports.urls")),
-    path("notifications/", include("notifications.urls")),
+    path('realtors/', include('realtors.urls')),
 
 ]
 if settings.DEBUG:

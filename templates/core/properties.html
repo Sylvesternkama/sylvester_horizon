@@ -1,29 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Properties</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <header>
-        <h1>Available Properties</h1>
-    </header>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Properties</title>-->
+<!--    <link rel="stylesheet" href="{% static 'css/styles.css' %}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <header>-->
+<!--        <h1>Available Properties</h1>-->
+<!--    </header>-->
 
-    <section class="property-list">
-        {% for property in properties %}
-        <div class="property-item">
-            <img src="{{ property.image.url }}" alt="Image of {{ property.title }}">
-            <h2>{{ property.title }}</h2>
-            <p>Location: {{ property.location }}</p>
-            <p>Price: {{ property.price }}</p>
-            <p>{{ property.description|truncatewords:20 }}</p>
-            <a href="{% url 'property_detail' property.id %}">View Details</a>
-        </div>
-        {% empty %}
-        <p>No properties available at the moment.</p>
-        {% endfor %}
-    </section>
-</body>
-</html>
+<!--    <section class="property-list">-->
+<!--        {% for property in properties %}-->
+<!--        <div class="property-item">-->
+<!--            <img src="{{ property.image.url }}" alt="Image of {{ property.title }}">-->
+<!--            <h2>{{ property.title }}</h2>-->
+<!--            <p>Location: {{ property.location }}</p>-->
+<!--            <p>Price: {{ property.price }}</p>-->
+<!--            <p>{{ property.description|truncatewords:20 }}</p>-->
+<!--            <a href="{% url 'property_detail' property.id %}">View Details</a>-->
+<!--        </div>-->
+<!--        {% empty %}-->
+<!--        <p>No properties available at the moment.</p>-->
+<!--        {% endfor %}-->
+<!--    </section>-->
+<!--</body>-->
+<!--</html>-->

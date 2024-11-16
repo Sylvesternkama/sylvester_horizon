@@ -127,18 +127,18 @@ def search(request):
     return render(request, 'core/search.html', context)
 
 
-def property_list(request):
+def properties_list(request):
     properties = Property.objects.all()
     return render(request, 'core/properties.html', {'properties': properties})
 
 
-def property_detail(request, id):
-    property = get_object_or_404(Property, id=id)
+def properties_detail(request, id):
+    properties = get_object_or_404(Property, id=id)
     return render(request, 'core/property_detail.html', {'property': property})
 
 
 def buy_property(request, id):
-    property = get_object_or_404(Property, id=id)
+    properties = get_object_or_404(Property, id=id)
     return render(request, 'core/buy_property.html', {'property': property})
 
 

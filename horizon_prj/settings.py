@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'core',
     'conversation',
     'reports',
-    'notifications',
     'listing',
+    'realtors',
+
 ]
 
 MIDDLEWARE = [

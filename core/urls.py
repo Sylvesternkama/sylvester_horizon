@@ -13,8 +13,8 @@ urlpatterns = [
     path("detail/<int:pk>/", views.detail, name="detail"),
     path('delete/<int:pk>/', views.delete_view, name="delete"),
     path('search/', views.search, name='search'),
-    path('properties/', views.property_list, name='property_list'),
-    path('properties/<int:id>/', views.property_detail, name='property_detail'),
+    path('properties/', views.properties_list, name='properties_list'),
+    path('properties/<int:id>/', views.properties_detail, name='properties_detail'),
     path('properties/<int:id>/buy/', views.buy_property, name='buy_property'),
     path('properties/<int:id>/confirm_purchase/', views.confirm_purchase, name='confirm_purchase'),
 ]
